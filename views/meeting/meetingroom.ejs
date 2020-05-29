@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Classroom | RedPositive Services Pvt. Ltd.</title>
+    <link rel="shortcut icon" type="image/PNG" href="../images/favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
+</head>
+<body>
+    <div class="stream">
+        <div class="row">
+            <div id="videoarea" class="col-lg-9 col-md-12 order-lg-2 videoarea">
+                <div class="joinmeetingformbox" id="selectRoom" style="margin-top:40vh;">
+                    <div class="form-group">
+                        <label for="meetingID">Meeting ID</label>
+                        <input class="form-control" type="text" id="roomNumber" name="meetingID"  value="<%= vcroomId %>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <button title="Click on the button to start your camera" class="button button-warning btn-block" id="goRoom">Start Camera</button>
+                    </div>
+                </div>
+                <div id="consultingRoom" class="video-row">
+                    <a title="Leave Classroom" class="out" href="/home"><i class="fa fa-close"></i></a>
+                    <button class="share"><i class="fa fa-share-alt-square"></i></button>
+                    <div class="video-column">
+                        <video id="localVideo" autoplay></video>
+                        <div class="text-center">
+                            <h5><%= user.fname %></h5>
+                        </div>
+                    </div>
+                    <div class="video-column">
+                        <video id="remoteVideo" autoplay></video>
+                        <div class="text-center">
+                            <h5><%= user.fname %></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 order-lg-1"> 
+                <iframe src="http://localhost:5000/chatroom.html?username=<%= user.fname%>&room=<%= room%>" width="100%" height="100%" style="border:none;overflow: hidden; ">
+                </iframe>   
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../js/dynamic.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

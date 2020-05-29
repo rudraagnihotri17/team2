@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/PNG" href="../images/favicon.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheet/styles.css">
+  <title>ChatRoom | RedPositive Services Pvt. Ltd.</title>
+</head>
+<body>
+  <div class="htmlchat">
+    <div id="collapse-live" class="chatheading text-center">
+      <h3>RED-CHAT</h3>
+      <span id="bars" class="bars"><i class="fa fa-close"></i></span>
+    </div>
+    <div id="chat" class="chat">
+      <div class="chat-sidebar" style="display:none;">
+        <h3><i class="fas fa-comments"></i> Room Name:</h3>
+        <h2 id="room-name"></h2>
+        <h3><i class="fas fa-users"></i> Users</h3>
+        <ul id="users">
+        </ul>
+      </div>
+      <div class="chatmessage">
+			
+      </div>
+    </div>
+      <div class="textbox">
+        <form id="chat-form">
+          <input
+            id="msg"
+            class="message-field"
+            type="text"
+            placeholder="Type your message here.."
+            name="message"
+            required
+            autocomplete="off"
+          />
+          <div class="buttons">
+            <button id="sendMessage"><i class="fa fa-send"></i></button>
+          </div>
+        </form>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../../js/chatmain.js"></script>
+  <script src="../../js/dynamic.js"></script>
+</body>
+</html>
